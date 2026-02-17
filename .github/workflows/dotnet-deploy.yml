@@ -1,0 +1,64 @@
+name: Build, Zip and (optionally) Deploy .NET API & Web
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-zip:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.x'
+
+    - name: Build and publish API
+      working-directory: "01 Implementación de aplicaciones web de Azure App Service/.NET/API"
+      run: |
+        dotnet restore
+        dotnet publish -c Release -o publish
+
+    - name: Zip API publish output
+      run: |
+        cd "01 Implementación de aplicaciones web de Azure App Service/.NET/API/publish"
+        zip -r "${{ github.workspace }}/api.zip" .
+
+    - name: Build and publish Web
+      working-directory: "01 Implementación de aplicaciones web de Azure App Service/.NET/Web"
+      run: |
+        dotnet restore
+        dotnet publish -c Release -o publish
+
+    - name: Zip Web publish output
+      run: |
+        cd "01 Implementación de aplicaciones web de Azure App Service/.NET/Web/publish"
+        zip -r "${{ github.workspace }}/web.zip" .
+
+    - name: Upload zip artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dotnet-zips
+        path: |
+          api.zip
+          web.zip
+
+    - name: Azure login (optional, required only if you want CI deploy)
+      if: secrets.AZURE_CREDENTIALS
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy API with az (optional)
+      if: secrets.AZURE_CREDENTIALS && secrets.API_APP_NAME
+      run: |
+        az webapp deployment source config-zip --resource-group ManagedPlatform --src api.zip --name ${{ secrets.API_APP_NAME }}
+
+    - name: Deploy Web with az (optional)
+      if: secrets.AZURE_CREDENTIALS && secrets.WEB_APP_NAME
+      run: |
+        az webapp deployment source config-zip --resource-group ManagedPlatform --src web.zip --name ${{ secrets.WEB_APP_NAME }}
