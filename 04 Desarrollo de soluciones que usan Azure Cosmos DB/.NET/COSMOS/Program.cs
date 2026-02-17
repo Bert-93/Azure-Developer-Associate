@@ -8,8 +8,8 @@ namespace CosmosClientApp;
 
 class Program
 {
-    static string endpoint = "https://cosmosdbdemosbcr.documents.azure.com:443/";
-    static string key = "ZGMgcZJKTrvp0ol8xtMjbicSmH95Do0Z24SiLttFmiU2xD4RRDZq2ZZER1cO2YIhaQyhi3jtXCGhACDb7PW0Dg==";
+    static string endpoint = "https://XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.documents.azure.com:443/";
+    static string key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
     static string databaseId = "northwind";
     static string containerId = "customers";
 
