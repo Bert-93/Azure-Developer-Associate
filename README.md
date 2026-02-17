@@ -34,6 +34,10 @@ Guía sobre Azure Blob Storage: exploración, gestión del ciclo de vida y opera
 
 Introducción a Azure Cosmos DB: exploración, modelos de facturación (RU), APIs soportadas, coherencia y ejemplos server-side.
 
+#### [.NET — Cosmos DB Client](./04%20Desarrollo%20de%20soluciones%20que%20usan%20Azure%20Cosmos%20DB/.NET)
+
+Ejemplo .NET que muestra operaciones CRUD sobre Azure Cosmos DB (contenedor de clientes), consultas con `QueryDefinition` y paginación con `FeedIterator`.
+
 ---
 
 ## Recursos adicionales
