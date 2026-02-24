@@ -62,5 +62,3 @@ Este documento resume conceptos y prácticas clave para trabajar con **Azure App
 - Comandos CLI útiles:
   - `az webapp create`, `az webapp config appsettings set`, `az webapp deployment source config-zip`
   - `az webapp deployment slot create`, `az webapp deployment slot swap`
-
-Si quieres, puedo añadir ejemplos concretos de YAML para GitHub Actions, pasos de configuración en el Portal, o una checklist de pre-swap y post-swap automatizada.

@@ -170,7 +170,3 @@ az cosmosdb sql container create --account-name my-cosmos-account -g MyResourceG
 - Documentación: https://learn.microsoft.com/azure/cosmos-db
 - SDK C#: https://learn.microsoft.com/azure/cosmos-db/sql/how-to-use-dotnet
 - Server-side programming (stored procs/triggers/UDFs): https://learn.microsoft.com/azure/cosmos-db/programming
-
-Si quieres, puedo:
-- Añadir ejemplos de código C# más detallados (gestión de errores, retry, bulk/TransactionalBatch).
-- Crear ejemplos JSON/JS ya cargables desde Data Explorer (stored procedure, trigger, UDF).

@@ -40,9 +40,17 @@ Ejemplo .NET que muestra operaciones CRUD sobre Azure Cosmos DB (contenedor de c
 
 ---
 
+### [05 Implementación de soluciones en contenedores](./05%20Implementaci%C3%B3n%20de%20soluciones%20en%20contenedores)
+
+Guía sobre contenedores en Azure: administración de imágenes con ACR, ejecución con ACI, y despliegue con Container Apps.
+
+#### [Ejemplo de comandos Docker](./05%20Implementaci%C3%B3n%20de%20soluciones%20en%20contenedores/DOCKER.md)
+
+Ejemplo de comandos `docker` para tareas comunes: descargar, listar, borrar imágenes; crear, parar, arrancar y eliminar contenedores; acceder a la shell; copiar ficheros; crear una imagen con commit; etiquetar y enviar a un registro de Azure.
+
+
 ## Recursos adicionales
 
 - [Documentación oficial de Azure](https://learn.microsoft.com/azure/)
 - [Azure Functions Core Tools](https://learn.microsoft.com/azure/azure-functions/functions-run-local)
 - [Azure CLI](https://learn.microsoft.com/cli/azure/)
-
